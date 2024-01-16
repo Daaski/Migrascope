@@ -1,0 +1,95 @@
+@import "scss/utils";
+
+.form_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @include fullHdWidth {
+    width: 50vw;
+  }
+  width: 55vw;
+  @include thousandTwoWidth {
+    width: 50vw;
+  }
+  @include bigtablet {
+    width: 100%;
+    height: 100%;
+    padding: 150px 0;
+  }
+}
+
+.form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  @include phoneOrTablet {
+    margin-top: 50px;
+  }
+  @include phone{
+    width: calc(100% - 30px);
+    margin: 50px auto 0;
+  }
+}
+
+
+.form_title {
+  @include InterSemiBold(28px);
+  text-align: center;
+  margin-top: -150px;
+  @include bigtablet {
+    margin-top: 0;
+  }
+}
+
+
+.forgot_password {
+  @include InterMediumBold(13px);
+  color: $active-color;
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .2s all ease-in-out;
+  &:hover {
+    text-decoration: underline $active-color;
+  }
+}
+
+.login_actions_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & button {
+    width: 40%;
+    min-width: max-content;
+    @include phone {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+  @include phone {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.change_form_text {
+  position: absolute;
+  bottom: 25px;
+  @include InterRegular(14px);
+}
+
+.change_form_text_in_register {
+  @extend .change_form_text;
+  @include phone {
+    position: relative;
+    padding-bottom: 20px;
+  }
+}
+
+.linked_text {
+  @extend .forgot_password;
+  font-size: 14px;
+}

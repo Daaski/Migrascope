@@ -1,0 +1,6 @@
+@import "scss/utils";
+
+.forms {
+  @include main_offset;
+  margin: 24px 0;
+}

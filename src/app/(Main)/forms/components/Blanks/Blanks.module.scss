@@ -1,0 +1,98 @@
+@import "scss/utils";
+
+.empty_blanks {
+  display: flex;
+  column-gap: 48px;
+  padding: 25px;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  @include bigtablet {
+    column-gap: 32px;
+  }
+  @include phoneOrTablet {
+    flex-direction: column;
+    padding: 15px;
+    row-gap: 16px;
+  }
+  & img {
+    @include phoneOrTablet {
+      display: none;
+    }
+  }
+}
+
+.blanks_title {
+  @include InterBold(24px);
+  margin-bottom: 14px;
+  @include bigtablet {
+    font-size: 20px;
+  }
+  @include phoneOrTablet {
+    font-size: 18px;
+  }
+}
+
+.blanks_descriptions {
+  margin-left: 14px;
+}
+
+.blanks_description_item {
+  @include InterRegular(16px);
+  list-style-type: initial;
+  line-height: 27px; /* 168.75% */
+  @include bigtablet {
+    font-size: 15px;
+  }
+  @include phoneOrTablet {
+    font-size: 14px;
+  }
+}
+
+.blanks_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.blank_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 14px;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  @include bigtablet {
+    padding: 16px 13px;
+  }
+  @include phone {
+    padding: 14px 8px;
+  }
+}
+
+.blank_item_name {
+  display: flex;
+  column-gap: 13px;
+  & p {
+    @include InterRegular(14px);
+    color: #969696;
+    @include phone {
+      font-size: 12px;
+      column-gap: 8px;
+    }
+  }
+}
+
+.notification_svg {
+  width: 16px;
+  height: 16px;
+  color: #595FE5;
+}
+
+.download_link {
+  @include InterSemiBold(12px);
+  color: $active-color;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,45 @@
+@import "scss/utils";
+
+.button {
+  width: 40px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  border: 1px solid $border-color;
+  &:hover {
+    border-color: $active-color;
+  }
+  &:active {
+    background-color: $neutral-light;
+  }
+  &:disabled {
+    background-color: gray;
+    pointer-events: none;
+  }
+  @include phoneOrTablet {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.button_big {
+  height: 48px;
+  width: 48px;
+  padding: 16px;
+  @include phoneOrTablet {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.button_svg {
+  min-width: 16px;
+  min-height: 16px;
+  color: $neutral-light-darker;
+}

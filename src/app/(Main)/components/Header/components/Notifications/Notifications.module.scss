@@ -1,0 +1,20 @@
+@import "scss/utils";
+
+.notifications_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: $neutral-light;
+  transition: .2s all ease-in-out;
+  border: 1px solid transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: $active-color;
+    .svg {
+      color: white;
+    }
+  }
+}

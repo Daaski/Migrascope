@@ -1,0 +1,47 @@
+@import "scss/utils";
+
+.login_wrapper {
+  display: flex;
+  @include bigtablet {
+    height: 100vh;
+  }
+}
+
+.login_bg_wrapper {
+  height: 100vh;
+  width: 45vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include fullHdWidth {
+    width: 50vw;
+  }
+  @include thousandTwoWidth {
+    width: 50vw;
+  }
+  @include bigtablet {
+    display: none;
+  }
+}
+
+.logo {
+  position: relative;
+  margin-top: 20%;
+  @include bigtablet {
+    display: none;
+  }
+}
+
+.logo_mobile {
+  display: none;
+  @include bigtablet {
+    display: initial;
+    position: absolute;
+    margin-top: 25px;
+    left: calc(50% - 110.5px);
+    right: calc(50% - 110.5px);
+    h1 {
+      font-size: 20px;
+    }
+  }
+}

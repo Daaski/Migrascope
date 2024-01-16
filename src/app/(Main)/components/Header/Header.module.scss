@@ -1,0 +1,26 @@
+@import "scss/utils";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 30px;
+  border-bottom: 1px solid #EEEEEE;
+  @include phoneOrTablet {
+    padding: 16px 15px;
+  }
+}
+
+.header_description {
+  @include PoppinsMediumBold(18px);
+}
+
+.header_actions {
+  display: flex;
+  column-gap: 24px;
+
+  @include phoneOrTablet {
+    column-gap: 16px;
+    margin-right: 42px;
+  }
+}

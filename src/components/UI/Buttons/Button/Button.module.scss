@@ -1,0 +1,96 @@
+@import "scss/utils";
+
+.button_default {
+  position: relative;
+  min-height: 40px;
+  width: 100%;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 12px;
+  background-color: $active-color;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  font-size: 14px;
+  &:hover {
+    background-color: #5157D0;
+  }
+  &:active {
+    background-color: #585FE3;
+  }
+  &:disabled {
+    background-color: gray;
+    pointer-events: none;
+  }
+  @include phoneOrTablet {
+    width: 100%;
+    padding: 8px 16px ;
+  }
+}
+
+.button_default_gray {
+  @extend .button_default;
+  background-color: $neutral-light;
+  color: $neutral-light-darker;
+  &:hover {
+    background-color: #DCDCDC;
+  }
+  &:active {
+    background-color: $neutral-light-darker;
+    color: white;
+  }
+}
+
+.button_big {
+  @extend .button_default;
+  height: 56px;
+  font-size: 16px;
+  padding: 16px 32px;
+  @include bigtablet {
+    padding: 10px 25px ;
+  }
+  @include phoneOrTablet {
+    width: 100%;
+    padding: 12px 30px ;
+  }
+}
+
+.button_medium {
+  @extend .button_default;
+  height: 48px;
+  padding: 12px 24px;
+  font-size: 16px;
+  @include phoneOrTablet {
+    height: 40px;
+    padding: 8px 24px;
+  }
+}
+
+.button_big_gray {
+  @extend .button_big;
+  @extend .button_default_gray;
+}
+
+.button_svg {
+  position: relative;
+  padding-left: 42px;
+}
+
+.svg_element {
+  max-width: 16px;
+  max-height: 16px;
+  position: absolute;
+  left: 12px;
+  top: calc(50% - 8px);
+  color: white;
+}
+
+.button_spinner {
+  max-width: 16px;
+  max-height: 16px;
+  position: absolute;
+  right: 8px;
+  color: white;
+  top: calc(50% - 8px);
+  animation: rotate 1.5s infinite linear ;
+}
+

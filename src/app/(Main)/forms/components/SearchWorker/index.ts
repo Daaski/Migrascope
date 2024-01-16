@@ -1,0 +1,1 @@
+export { SearchWorker } from './SearchWorker';

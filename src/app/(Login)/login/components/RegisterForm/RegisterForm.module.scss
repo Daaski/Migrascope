@@ -1,0 +1,37 @@
+@import "scss/utils";
+@import "src/app/(Login)/login/components/LoginForm/LoginForm.module.scss";
+
+.register_form_wrapper {
+  @extend .form_wrapper;
+  @include phone {
+    padding: 0;
+    justify-content: initial;
+  }
+}
+
+.register_form {
+  @extend .form;
+  width: 450px;
+  margin-top: 15px;
+  @include phone {
+    padding: 0 15px;
+    margin: 40px 0;
+    width: 100%;
+  }
+}
+
+.register_title {
+  @extend .form_title;
+  margin-top: -40px;
+  @include bigtablet {
+    margin-top: 0;
+  }
+  @include phone {
+    margin-top: 100px;
+  }
+}
+
+.organized_inputs {
+  display: flex;
+  column-gap: 10px;
+}

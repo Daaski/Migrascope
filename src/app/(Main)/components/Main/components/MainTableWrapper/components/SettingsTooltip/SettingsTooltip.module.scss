@@ -1,0 +1,60 @@
+@import "scss/utils";
+
+.body_gray {
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.20);
+  z-index: 9000;
+}
+
+.settings_tippy_wrapper {
+  position: relative;
+}
+
+.settings_menu {
+  height: 280px;
+  width: 350px;
+  padding: 16px 23px;
+  border-radius: 12px;
+  background-color: white;
+  @include phone {
+    width: 325px;
+  }
+}
+
+.settings_title {
+  @include InterBold(16px);
+  margin-bottom: 18px;
+}
+
+.select_user_wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.buttons_wrapper {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 14px;
+  & button {
+    width: calc(50% - 14px);
+    &:last-child {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $border-color;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: .2s all ease-in-out;
+      &:hover {
+        border-color: $active-color;
+      }
+      &:active {
+        background-color: transparentize($neutral-light-darker, .9);
+      }
+    }
+  }
+}

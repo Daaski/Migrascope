@@ -1,0 +1,62 @@
+@import "scss/utils";
+@import "src/app/(Login)/login/components/LoginForm/LoginForm.module.scss";
+
+.form_title_wrapper {
+  @extend .form_title;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 25px;
+  & h2 {
+    @include InterSemiBold(28px);
+    margin-left: 36px;
+    @include phoneOrTablet {
+      font-size: 24px;
+      margin-left: 28px;
+    }
+  }
+  & svg {
+    width: 28px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    color: black;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: .2s color ease-in-out;
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.pin_description {
+  @include InterSemiBold(16px);
+  color: #727880;
+  margin-bottom: 15px;
+  & span {
+    color: black;
+    text-decoration: underline;
+  }
+}
+
+.form_send_again {
+  cursor: pointer;
+  @include InterSemiBold(12px);
+  color: #727880;
+}
+
+.bottom_wrapper {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.loading_spinner {
+  width: 20px;
+  height: 20px;
+  color: $active-color;
+  animation: rotate 1.5s infinite linear;
+}

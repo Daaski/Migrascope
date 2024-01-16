@@ -1,0 +1,134 @@
+@import "scss/utils";
+
+
+.bars_skeleton_wrapper {
+  height: 214.2px;
+  padding: 30px;
+  @include thousandThreeWidth {
+    min-width: 706px;
+  }
+  @include thousandTwoWidth {
+    min-width: 0;
+  }
+  @include bigtablet {
+    height: 209px;
+  }
+  @include phoneOrTablet {
+    height: 179px;
+  }
+  @include phone {
+    height: 289px;
+  }
+}
+
+.bars_skeleton {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $border-color;
+}
+
+.skeleton_table_wrapper {
+  position: relative;
+  height: 472px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  @include thousandThreeWidth {
+    height: 482px;
+  }
+  @include thousandTwoWidth {
+    height: 400px;
+  }
+  @include phoneOrTablet {
+    height: max-content;
+  }
+  @include phone {
+    height: 465px;
+  }
+}
+
+.table_title {
+  min-height: 24px;
+  width: 25%;
+  margin: 24px 0 4px 0;
+  background-color: $border-color;
+  border-radius: 12px;
+  @include phoneOrTablet {
+    margin: 24px 12px 0;
+  }
+}
+
+.table_headers {
+  min-height: 20px;
+  margin-bottom: 4px;
+  width: 100%;
+  background-color: $border-color;
+  border-radius: 12px;
+  @include phoneOrTablet {
+    margin:0 12px;
+  }
+  @include phone {
+    width: calc(100% - 24px);
+  }
+}
+
+.table_body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  border-radius: 12px;
+}
+
+.table_row {
+  height: 50.4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 12px;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+}
+
+.table_td {
+  height: 75%;
+  width: 100%;
+  margin: 16px 5px;
+  background-color: $border-color;
+  border-radius: 12px;
+}
+
+.table_pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 25px;
+  @include phoneOrTablet {
+    flex-direction: column-reverse;
+    row-gap: 4px;
+  }
+}
+
+.pagination_input {
+  width: 130px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: $border-color;
+  @include phoneOrTablet {
+    margin: 0 auto 0 12px;
+  }
+}
+
+.pagination_numbers {
+  height: 40px;
+  width: calc(100% - 24px);
+  border-radius: 12px;
+  background-color: $border-color;
+  @include phoneOrTablet {
+    margin: 0 12px;
+  }
+}

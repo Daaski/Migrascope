@@ -1,0 +1,153 @@
+@import "scss/utils";
+
+.table_wrapper {
+  overflow-x: auto;
+  @include phone {
+    max-width: calc(100vw - 20px);
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  table-layout: fixed;
+  @include phone {
+    width: max-content;
+  }
+}
+
+
+.header_item {
+  @include InterSemiBold(10px);
+  color: #C6C8CB;
+  text-transform: uppercase;
+  padding: 0 13px 4px 13px;
+  & span {
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    background-color: black;
+  }
+}
+
+
+.table_body {}
+
+.table_row {}
+
+.row_td {
+  @include PoppinsRegular(14px);
+  border: 1px solid $border-color;
+  padding: 16px 13px;
+
+  &:not(:last-child, :first-child) {
+    border-right: none;
+    border-left: none;
+  }
+
+  &:first-child {
+    border-radius: 12px 0 0 12px;
+    border-right: none;
+  }
+  &:last-child {
+    border-radius: 0 12px 12px 0;
+    border-left: none;
+  }
+}
+
+.pagination_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  @include phoneOrTablet {
+    row-gap: 10px;
+    flex-flow: row wrap-reverse;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    @include main_offset;
+  }
+  @include phone {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.pagination_input {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  color: #9DA2A7;
+  @include InterMediumBold(12px);
+  & input {
+    width: 60px;
+  }
+}
+
+
+.pagination_numbers {
+  display: flex;
+  column-gap: 4px;
+  margin: 0 auto;
+}
+
+.number_default {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $neutral-light;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: .2s all ease-in-out;
+  &:hover {
+    border-color: $active-color;
+  }
+  &:active {
+    background-color: #7B61FF;
+    color: white;
+    & svg {
+      color: white;
+    }
+  }
+  @include bigtablet {
+    width: 36px;
+    height: 36px;
+  }
+  @include phoneOrTablet {
+    width: 40px;
+    height: 40px;
+  }
+  @include phone {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+.arrow_wrapper {
+ @extend .number_default;
+  & svg {
+    width: 16px;
+    height: 16px;
+    color: #727880;
+  }
+  &:last-child {
+    & svg {
+      rotate: -180deg;
+    }
+  }
+  &[data-isdisabled='true'] {
+    pointer-events: none;
+  }
+}
+
+.pagination_number {
+  @extend .number_default;
+  @include InterMediumBold(14px);
+  &[data-isactive='true'] {
+    background-color: #7B61FF;
+    color: white;
+  }
+}

@@ -1,0 +1,27 @@
+@import "scss/utils";
+
+.body {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 'navbar header'
+                          'navbar main';
+  grid-template-columns: 271px 1fr;
+  grid-template-rows: 64px 1fr;
+  & header {
+    grid-area: header;
+  }
+  & nav {
+    grid-area: navbar;
+  }
+  & div {
+    &:first-child {
+      grid-area: main;
+    }
+  }
+  @include bigtablet {
+    grid-template-columns: 220px 1fr;
+  }
+  @include phoneOrTablet {
+    display: block;
+  }
+}

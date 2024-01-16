@@ -1,0 +1,187 @@
+@import "scss/utils";
+
+.field {
+  position: relative;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 80px;
+  width: 100%;
+}
+
+.field_big {
+  height: 48px;
+}
+
+.field_without_error_label {
+  width: 100%;
+  height: max-content;
+  margin-top: 0;
+}
+
+.field_search {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: 12px;
+    background: url("../../svg/search.svg");
+  }
+}
+
+.field_with_label {
+  @extend .field;
+  height: 81.4px;
+  margin-top: 0;
+  justify-content: flex-start;
+}
+
+.field_with_label_big {
+  @extend .field_with_label;
+  height: 89.4px;
+}
+
+.input {
+  width: 100%;
+  min-height: 40px;
+  max-height: 40px;
+  background-color: white;
+  outline: none;
+  border-radius: 12px;
+  border: 2px solid #EEE;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  transition: .2s all ease-in-out;
+
+  @include PoppinsRegular(14px);
+
+  @include phone {
+    min-height: 40px;
+    width: 100%;
+    border-radius: 7px;
+  }
+  &:hover {
+    border-color: #EBECFF;
+  }
+  &::placeholder {
+    color: #C6C8CB;
+  }
+  &:focus {
+    border-color: $active-color;
+  }
+  &:disabled {
+    background-color: #EEE;
+    pointer-events: none;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.input_big {
+  min-height: 48px;
+}
+
+.input_error {
+  background-color: #F5F5F5;
+  color: $error-color;
+  border-color: $error-color;
+  &:hover {
+    border-color: $error-color;
+  }
+  &:focus {
+    border-color: $error-color;
+  }
+}
+
+.input_search {
+  position: relative;
+  background-color: #F5F5F5;
+  border-radius: 24px;
+  padding-left: 40px;
+}
+
+.input_label {
+  width: 100%;
+  color: #727880;
+  @include InterSemiBold(12px);
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+
+.required_indicator {
+  color: $error-color;
+  @include PoppinsSemiBold(12px);
+}
+
+.input_svg_wrapper {
+  position: relative;
+  width: 100%;
+  height: max-content;
+}
+
+.input_error_label {
+  width: 100%;
+  color: $error-color;
+  @include PoppinsRegular(12px);
+  margin-top: 4px;
+  line-height: 15px;
+  text-align: left;
+}
+
+.eye_wrapper {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  color: #9DA2A7;
+  cursor: pointer;
+}
+
+.clear_wrapper {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 8px);
+  bottom: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C6C8CB;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  &:hover {
+    background-color: white;
+    border-color: $active-color;
+    & svg {
+      color: $neutral-light-darker;
+    }
+  }
+  @include phone {
+    bottom: 30px;
+  }
+}
+
+.custom_svg {
+  width: 7px;
+  height: 7px;
+  color: white;
+  transition: .2s all ease-in-out;
+  margin-right: .5px;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+  @include phone {
+    bottom: 30px;
+  }
+}

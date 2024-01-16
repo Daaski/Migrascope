@@ -1,0 +1,12 @@
+@import "scss/utils";
+
+.table_wrapper {
+  @include main_offset_smaller;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 30px;
+  @include phoneOrTablet {
+    padding: 0;
+  }
+}

@@ -1,0 +1,21 @@
+@import "scss/utils";
+
+.search_worker_wrapper {
+  width: 50%;
+  margin-bottom: 16px;
+  @include thousandThreeWidth {
+    width: 70%;
+  }
+  @include phone {
+    width: 100%;
+  }
+}
+
+.search_title {
+  @include InterMediumBold(18px);
+  margin-bottom: 16px;
+  @include thousandTwoWidth {
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,29 @@
+@import "scss/utils";
+
+.blanks_skeleton_wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.blank_skeleton {
+  height: 64.4px;
+  border-radius: 12px;
+  background-color: $border-color;
+  @include bigtablet {
+    height: 54.4px;
+  }
+  @include phone {
+    height: 48px;
+  }
+}
+
+.blank_skeleton_fullhd {
+  @include fullHdWidth {
+    height: 64.4px;
+    border-radius: 12px;
+    background-color: $border-color;
+  }
+}

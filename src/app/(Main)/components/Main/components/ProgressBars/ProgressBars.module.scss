@@ -1,0 +1,92 @@
+@import "scss/utils";
+
+.bars_layout {
+  @include main_offset;
+  padding: 30px;
+  @include phoneOrTablet {
+    padding: 15px;
+  }
+}
+
+.bars_title {
+  @include InterMediumBold(16px);
+  margin-bottom: 15px;
+}
+
+.bars {
+  display: flex;
+  column-gap: 24px;
+  @include bigtablet {
+    column-gap: 8px;
+  }
+  @include phoneOrTablet {
+    flex-flow: row wrap;
+    column-gap: 0;
+  }
+  @include phone {
+    column-gap: 12px;
+  }
+}
+
+.bar {
+  height: 120px;
+  width: 110px;
+  min-width: 80px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  @include bigtablet {
+    width: 90px;
+    height: 110px;
+  }
+  @include phoneOrTablet {
+    width: 100px;
+  }
+  @include phone {
+    width: calc(33% - 12px);
+  }
+  & circle {
+    stroke-width: 8px;
+    stroke-linecap: round;
+    fill: transparent;
+  }
+}
+
+.bar_circle {
+  width: 92px;
+  height: 92px;
+  @include bigtablet {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.bar_circle_bg {
+  position: absolute;
+  top: 1px;
+  z-index: -1;
+  width: 92px;
+  height: 92px;
+  @include bigtablet {
+    top: 3px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+.bar_amount {
+  position: absolute;
+  top: calc(50% - 25px);
+  @include InterMediumBold(18px);
+  color: #1B1D1F;
+}
+
+.bar_title {
+  text-align: center;
+  @include InterSemiBold(12px);
+  color: $neutral-light-darker;
+}

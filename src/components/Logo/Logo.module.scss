@@ -1,0 +1,19 @@
+@import "scss/utils";
+
+.logo {
+  width: max-content;
+  display: flex;
+  column-gap: 4px;
+}
+
+.logo_title {
+  text-transform: uppercase;
+  color: #7B61FF;
+  @include InterMediumBold(16px);
+
+}
+
+.logo_svg {
+  width: 42px;
+  height: 25px;
+}

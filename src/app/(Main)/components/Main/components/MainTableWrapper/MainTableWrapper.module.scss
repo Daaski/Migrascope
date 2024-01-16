@@ -1,0 +1,121 @@
+@import "scss/utils";
+
+.table_actions {
+  display: flex;
+  column-gap: 12px;
+  @include thousandFourWidth {
+    display: grid;
+    grid-template-areas: 'a a settings company'
+                          'select select search search';
+    grid-template-rows: 40px 40px;
+    row-gap: 10px;
+  }
+  @include phoneOrTablet {
+    @include main_offset_smaller;
+  }
+  & div:nth-child(1) {
+    grid-area: select;
+  }
+  & div:nth-child(2) {
+    grid-area: search;
+  }
+  & div:nth-child(3) {
+    grid-area: settings;
+
+    @include bigtablet {
+      margin-left: auto;
+    }
+    @include phone {
+      order: -4;
+    }
+  }
+  & button:nth-child(4) {
+    white-space: nowrap;
+    overflow: hidden;
+    grid-area: company;
+    flex-grow: 0;
+    flex-shrink: 1;
+    @include fullHdWidth {
+      width: 50%;
+    }
+    @include phone {
+      order: -3;
+    }
+  }
+  @include thousandTwoWidth {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include bigtablet {
+    display: grid;
+    justify-content: initial;
+  }
+  @include phone {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.table_type_variants {
+  width: 100%;
+  position: relative;
+  display: flex;
+  & div {
+    display: none;
+    @include thousandTwoWidth {
+      display: block;
+    }
+  }
+  & button {
+    @include thousandTwoWidth {
+      display: none;
+    }
+  }
+}
+
+.type {
+  height: 40px;
+  padding: 12px;
+  color: #9DA2A7;
+  border: 1px solid $border-color;
+  @include InterSemiBold(10px);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  white-space: nowrap;
+  &:hover {
+    background-color: $border-color;
+  }
+
+  &:first-child {
+    border-radius: 12px 0 0 12px;
+  }
+
+  &:last-of-type {
+      border-radius: 0 12px 12px 0;
+  }
+
+  &[data-isactive='true'] {
+    color: #1B1D1F;
+    background-color: $border-color;
+  }
+}
+
+.table_title_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  margin: 24px 0 4px 13px;
+}
+
+.table_title {
+  @include InterSemiBold(16px);
+  color: $active-color;
+  text-transform: uppercase;
+}
+
+.table_title_role {
+  @include InterSemiBold(10px);
+  color: #C6C8CB;
+  text-transform: uppercase;
+}

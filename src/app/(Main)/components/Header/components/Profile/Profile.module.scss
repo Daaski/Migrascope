@@ -1,0 +1,13 @@
+@import "scss/utils";
+
+.header_profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: $neutral-light-darker;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  &:hover {
+    color: $active-color;
+  }
+}

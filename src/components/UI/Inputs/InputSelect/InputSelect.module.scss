@@ -1,0 +1,102 @@
+@import "components/UI/Inputs/Input/Input.module.scss";
+
+.list_wrapper {
+  max-height: 200px;
+  background: white;
+  width: 100%;
+  border-radius: 12px;
+  overflow-y: auto;
+  @include fullHdWidth {
+    padding: 5px 0;
+  }
+  padding: 3px 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.10), 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $border-color;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+  }
+}
+
+.input_wrapper {
+  position: relative;
+}
+
+.input_arrow_svg {
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 10px;
+  transition: .2s all ease-in-out;
+  background-color: transparent;
+  color: #9DA2A7;
+  rotate: -90deg;
+  @extend .svg;
+  &:hover {
+    color: #9DA2A7;
+  }
+}
+
+
+.input_arrow_svg_open {
+  transform: rotate(180deg);
+  top: calc(50% - 8px);
+}
+
+.list_item {
+  padding: 12px 8px;
+  transition: .2s all ease-in-out;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  @include PoppinsRegular(14px);
+  &:hover {
+    background: $neutral-light;
+    cursor: pointer;
+  }
+  @include bigtablet {
+    font-size: 13px;
+  }
+}
+
+.spinner_wrapper {
+  height: 40.8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.loading_spinner {
+  @extend .custom_svg;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 10px 15px;
+  color: $neutral-light-darker;
+  transition: .2s all ease-in-out;
+  animation: rotate 1.5s linear infinite;
+  &:hover {
+    cursor: initial;
+    color: $neutral-light-darker;
+  }
+}
+
+
+
+.list_empty {
+  @include PoppinsRegular(14px);
+
+
+  padding: 10px;
+  text-align: center;
+}

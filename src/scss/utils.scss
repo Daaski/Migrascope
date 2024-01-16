@@ -1,0 +1,205 @@
+$active-color: #595FE5;
+$neutral-light: #F5F5F5;
+$neutral-light-darker: #727880;
+$border-color: #EEEEEE;
+$skeleton_bg_color: #BBBBBB;
+$error-color: #E5646C;
+
+@mixin center() {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+@mixin main_offset {
+  padding: 0 30px;
+  @include phoneOrTablet {
+    padding: 0 15px;
+  }
+}
+
+@mixin main_offset_smaller {
+  padding: 0 11.5px;
+}
+
+@mixin fullHdWidth {
+  @media (min-width: 1680px) {
+    @content
+  }
+}
+
+
+@mixin laptopWidth {
+  @media (max-width: 1680px) {
+    @content
+  }
+}
+
+@mixin thousandFourWidth() {
+  @media (max-width: 1400px) {
+    @content
+  }
+}
+
+
+@mixin thousandThreeWidth() {
+  @media (max-width: 1300px) {
+    @content
+  }
+}
+
+@mixin thousandTwoWidth() {
+  @media (max-width: 1200px) {
+    @content
+  }
+}
+
+@mixin bigtablet() {
+  @media (max-width: 989px) {
+    @content;
+  }
+}
+
+@mixin notTablet() {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phoneOrTablet() {
+  @media (max-width: 769px) {
+    @content;
+  }
+}
+
+@mixin smallTablet() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+
+@mixin PoppinsBold($size) {
+  font-family: var(--font-poppins);
+  font-size: $size;
+  letter-spacing: 1px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@mixin InterBold($size) {
+  font-family: var(--font-poppins);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+@mixin PoppinsSemiBold($size) {
+  font-family: var(--font-poppins);
+  font-size: $size;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin InterSemiBold($size) {
+  font-family: var(--font-inter);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+@mixin PoppinsMediumBold($size) {
+  font-family: var(--font-inter);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+@mixin InterMediumBold($size) {
+  font-family: var(--font-inter);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+@mixin PoppinsRegular($size) {
+  font-family: var(--font-inter);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+@mixin InterRegular($size) {
+  font-family: var(--font-inter);
+  font-size: $size;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+
+.svg {
+  width: 16px;
+  height: 16px;
+  color: #727880;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.shimmer {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg,
+          rgba(255, 255, 255, 0) 20%,
+          rgba(255, 255, 255, 0.5) 50%,
+          rgba(255, 255, 255, 0) 80%);
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-25%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

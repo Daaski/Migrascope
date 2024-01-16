@@ -1,0 +1,1 @@
+export { BlanksSkeleton } from './BlanksSkeleton';

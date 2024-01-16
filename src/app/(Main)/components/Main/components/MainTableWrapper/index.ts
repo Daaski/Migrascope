@@ -1,0 +1,1 @@
+export { MainTableWrapper } from './MainTableWrapper';
